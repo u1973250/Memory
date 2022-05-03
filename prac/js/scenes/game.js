@@ -24,13 +24,13 @@ class GameScene extends Phaser.Scene {
 		var num_cartes = options_data.cards * 2;
 		let cartes_partida = arraycards.slice(0,num_cartes)
 		this.cameras.main.setBackgroundColor(0xBFFCFF);
+		
+		this.cards = this.physics.add.staticGroup();
 
 		for(var i = 0; i < num_cartes; i++){
 			this.add.image(100 * i + 75,300,cartes_partida[i])
 			this.cards.create(100 * i + 75, 300, 'back');
 		}
-		
-		this.cards = this.physics.add.staticGroup();
 		
 		/*this.add.image(250, 300, arraycards[0]);
 		this.add.image(350, 300, arraycards[1]);
@@ -45,7 +45,7 @@ class GameScene extends Phaser.Scene {
 		
 		let i = 0;
 		this.cards.children.iterate((card)=>{
-			card.card_id = arraycards[i];
+			card.card_id = cartes_partida[i];
 			i++;
 			card.setInteractive();
 			card.on('pointerup', () => {
