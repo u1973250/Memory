@@ -28,7 +28,7 @@ var gameObj = function (){
 			username:'',
 			current_card: [],
 			items: [],
-			num_cards: 2,
+			num_cards: options_data = num_cards,
 			bad_clicks: 0
 		},
 		created: function(){

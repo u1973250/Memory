@@ -25,3 +25,8 @@ function load(){
 	loadpage("./html/load.html");
 }
 
+function puntuacions(){
+	loadpage("./html/puntuacions.html");
+}
+
+
