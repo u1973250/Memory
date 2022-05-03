@@ -80,7 +80,7 @@ class GameScene extends Phaser.Scene {
                         var m = 0;
 
                         for(let j = 0; j < num_cartes*2; j++){
-                            let errors = this.add.image(125*j+50,300,cartes_partida[m]);
+                            let errors = this.add.image(100*j+75,300,cartes_partida[m]);
                             fail.push(errors);
                             m++;
                         }
