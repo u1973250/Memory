@@ -37,7 +37,7 @@ class GameScene extends Phaser.Scene {
 			temps = 2000;
 			resta = 20;
 		}
-		else(){
+		else{
 			temps = 3000;
 			resta = 10;
 		}
@@ -72,7 +72,7 @@ class GameScene extends Phaser.Scene {
 				card.disableBody(true,true);
 				if (this.firstClick){
 					if (this.firstClick.card_id !== card.card_id){
-						this.score -= 20;
+						this.score -= resta;
 						this.firstClick.enableBody(false, 0, 0, true, true);
 						card.enableBody(false, 0, 0, true, true);
 
@@ -81,7 +81,7 @@ class GameScene extends Phaser.Scene {
 
                         for(let j = 0; j < num_cartes*2; j++){
                             let errors = this.add.image(125*j+50,300,cartes_partida[m]);
-                            fallo.push(errors);
+                            fail.push(errors);
                             m++;
                         }
 
