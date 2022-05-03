@@ -89,7 +89,7 @@ class GameScene extends Phaser.Scene {
                             for (let i = 0; i < num_cartes*2; i++){
                                 fail[i].destroy();
                             }
-                        },tiempo_restante);
+                        },temps);
 
 						if (this.score <= 0){
 							alert("Game Over");
