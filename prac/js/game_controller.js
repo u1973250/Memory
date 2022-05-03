@@ -1,3 +1,14 @@
+var options = function(){
+	var options_data = {
+		cards:2, dificulty:"hard"
+	};
+	var load = function(){
+		var json = localStorage.getItem("config") || '{"cards":2,"dificulty":"hard"}';
+		options_data = JSON.parse(json);
+	};
+	load();
+}
+
 var gameObj = function (){
 	const back = "../resources/back.png";
 	const items = ["../resources/cb.png","../resources/co.png","../resources/sb.png",
