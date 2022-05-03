@@ -18,7 +18,7 @@ class GameScene extends Phaser.Scene {
 	}
 	
     create (){	
-		let arraycards = ['co', 'sb', 'co', 'sb'];
+		let arraycards = ['co','co','cb','cb','sb','sb','so','so','tb','tb','to','to'];
 		this.cameras.main.setBackgroundColor(0xBFFCFF);
 		
 		this.add.image(250, 300, arraycards[0]);
