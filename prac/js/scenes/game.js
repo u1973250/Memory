@@ -22,8 +22,25 @@ class GameScene extends Phaser.Scene {
 		var json = localStorage.getItem("config") || '{"cards":2,"dificulty":"hard"}';
 		var options_data = JSON.parse(json);
 		var num_cartes = options_data.cards*2;
+		var dificulty = options_data.dificulty;
 		let cartes_partida = arraycards.slice(0,num_cartes)
 		this.cameras.main.setBackgroundColor(0xBFFCFF);
+
+		var resta = null;
+		var temps = null;
+		
+		if(dificulty == "hard"){
+			temps = 1000;
+			resta = 30;
+		}
+		else if(dificulty == "normal"){
+			temps = 2000;
+			resta = 20;
+		}
+		else(){
+			temps = 3000;
+			resta = 10;
+		}
 		
 		this.cards = this.physics.add.staticGroup();
 
@@ -58,6 +75,22 @@ class GameScene extends Phaser.Scene {
 						this.score -= 20;
 						this.firstClick.enableBody(false, 0, 0, true, true);
 						card.enableBody(false, 0, 0, true, true);
+
+						var fail = [];
+                        var m = 0;
+
+                        for(let j = 0; j < num_cartes*2; j++){
+                            let errors = this.add.image(125*j+50,300,cartes_partida[m]);
+                            fallo.push(errors);
+                            m++;
+                        }
+
+                        setTimeout(() =>{
+                            for (let i = 0; i < num_cartes*2; i++){
+                                fail[i].destroy();
+                            }
+                        },tiempo_restante);
+
 						if (this.score <= 0){
 							alert("Game Over");
 							loadpage("../");
