@@ -28,8 +28,8 @@ class GameScene extends Phaser.Scene {
 		this.cards = this.physics.add.staticGroup();
 
 		for(var j = 0; j < num_cartes; j++){
-			this.add.image(100*i+75,300,cartes_partida[j]);
-			this.cards.create(100*i+75,300,'back');
+			this.add.image(100*j+75,300,cartes_partida[j]);
+			this.cards.create(100*j+75,300,'back');
 			console.log("secso")
 		}
 		
