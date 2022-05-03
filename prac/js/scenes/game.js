@@ -23,7 +23,7 @@ class GameScene extends Phaser.Scene {
 		var options_data = JSON.parse(json);
 		var num_cartes = options_data.cards*2;
 		let cartes_partida = arraycards.slice(0,num_cartes)
-		this.cameras.main.setBackgroundColor(0xBFFCFF);
+		this.cameras.main.setBackgroundColor(0xCFFCFF);
 		
 		this.cards = this.physics.add.staticGroup();
 
